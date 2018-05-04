@@ -1,13 +1,14 @@
-This repo contains the following:
+The files needed to generate the SV database include:
 
 sv_city.blend: Blender file with city and all external models packed. Requires Blender 2.77.
+	Email janicepan@utexas.edu for the link to download the .blend file;  ~640MB
 sv_city_capture.py: Python script to capture scenes within sv_city.blend.
-			Three customizable lines: 	line 174: savePath_SV; specifies directory to which to save image data
-										line 175: camAnglesDeg_SV; specifies rotation of the 4 cameras; default [0] only captures with the
-													traditional SV configuration
-										line 195: pathname; specifies path to external .csv files
-test4_captureLocations_all.csv: manually specified capture locations within the city in sv_city.blend
-SunColors.csv: manually specified ambient lighting conditions
+	Three customizable lines: 	line 174: savePath_SV; specifies directory to which to save image data
+								line 175: camAnglesDeg_SV; specifies rotation of the 4 cameras;
+								default [0] only captures with the traditional SV configuration
+								line 195: pathname; specifies path to external .csv files
+test4_captureLocations_all.csv: manually-specified capture locations within the city in sv_city.blend
+SunColors.csv: manually-specified ambient lighting conditions
 
 Sample call:
 <path-to-blender>/blender <path-to-sv_city>/sv-city.blend --background --python <path-to-python-script>/sv_city_capture.py -- <arg1> <arg2> <arg3> <arg4> <arg5>
