@@ -1,4 +1,4 @@
-The files needed to generate the SV database include:
+The files needed to capture the SV data include:
 
 sv_city.blend: Blender file with city and all external models packed. Requires Blender 2.77.
 	Email janicepan@utexas.edu for the link to download the .blend file;  ~640MB
@@ -19,3 +19,9 @@ where the arguments are:
 <arg4> = start index of augmentations to capture in this call to sv_city_capture.py (e.g., 0 to start at the beginning)			
 <arg5> = number of augmentations starting with <arg4> to capture in this call to sv_city_capture.py
 	*<arg4> and <arg5> allow for breaking up data collection into multiple jobs
+	
+The files needed to process the captured data:
+preprocess_scenes_multiangle.py: combine rendered seeds and create a stitched (i.e., distorted) SV image
+preprocess_functions.py: used in preprocess_scenes_multiangle.py
+preprocess_depth_multiangle.m: combine depth maps of different seeds to reduces firefly effect
+Data/calibration/*: all the calibration data used to generate stitched images
